@@ -1,6 +1,119 @@
 ## Soft Computing
 
 ---
+# 🧠 Soft Computing Learning Journey
+
+<div align="center">
+
+![Soft Computing Banner](media/images/banner.png)
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.6%2B-orange?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](contributing/CONTRIBUTING.md)
+
+**📚 Complete documentation of Soft Computing course for S1 Informatics**
+
+[📖 Syllabus](SYLLABUS.md) • [🚀 Quick Start](#-quick-start) • [📊 Progress](#-learning-progress) • [💡 Projects](#-featured-projects) • [🤝 Contributing](#-contributing)
+
+</div>
+
+---
+
+## 🎯 About This Repository
+
+This repository documents my comprehensive learning journey in **Soft Computing** course at the Informatics undergraduate program. It contains all theoretical materials, practical implementations, assignments, projects, and personal experiments conducted throughout the semester.
+
+### 🌟 What's Inside?
+
+- 📘 **16 Weeks of Theory** - Detailed notes and summaries
+- ⚙️ **11+ Lab Practices** - Hands-on implementations
+- 💡 **4 Major Projects** - Real-world applications
+- 🧪 **Research Experiments** - Parameter tuning and comparisons
+- 📑 **Extensive References** - Books, papers, and resources
+- 🛠️ **Reusable Tools** - Utilities and templates
+
+---
+
+## 📚 Course Content
+
+### 📘 Part 1: Fuzzy Logic Systems (Week 1-5)
+Learn about fuzzy sets, membership functions, fuzzy operations, and inference systems.
+
+**Topics Covered:**
+- Introduction to Soft Computing
+- Fuzzy Sets Theory
+- Membership Functions (Triangular, Trapezoidal, Gaussian)
+- Fuzzy Operations (Union, Intersection, Complement)
+- Fuzzy Inference Systems (Mamdani & Sugeno)
+- Real-world Applications
+
+**[📂 View Theory →](📘_theory/) | [⚙️ View Labs →](⚙️_practices/lab02_fuzzy_logic/)**
+
+---
+
+### 🧠 Part 2: Artificial Neural Networks (Week 6-9)
+Deep dive into neural networks, from perceptrons to deep learning basics.
+
+**Topics Covered:**
+- Perceptron & Multi-layer Perceptron
+- Activation Functions
+- Backpropagation Algorithm
+- Training & Optimization
+- Overfitting & Regularization
+- Introduction to CNN & RNN
+
+**[📂 View Theory →](📘_theory/) | [⚙️ View Labs →](⚙️_practices/lab04_perceptron/)**
+
+---
+
+### 🧬 Part 3: Genetic Algorithms (Week 11-13)
+Explore evolutionary computation and optimization techniques.
+
+**Topics Covered:**
+- Evolutionary Computation Basics
+- GA Components (Population, Chromosome, Genes)
+- Selection Methods
+- Crossover & Mutation Operators
+- Fitness Functions
+- Real-world Optimization Problems
+
+**[📂 View Theory →](📘_theory/) | [⚙️ View Labs →](⚙️_practices/lab08_genetic_algorithm/)**
+
+---
+
+### 🔄 Part 4: Hybrid & Advanced Systems (Week 14-16)
+Combine multiple techniques for powerful hybrid systems.
+
+**Topics Covered:**
+- Neuro-Fuzzy Systems (ANFIS)
+- Particle Swarm Optimization (PSO)
+- Ant Colony Optimization (ACO)
+- Hybrid Approaches
+- Final Project Integration
+
+**[📂 View Theory →](📘_theory/) | [⚙️ View Labs →](⚙️_practices/lab10_anfis/)**
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8 or higher
+- pip or conda package manager
+- Basic understanding of Python programming
+- Jupyter Notebook (optional but recommended)
+
+### Installation
+
+1. **Clone this repository**
+```bash
+git clone https://github.com/hafizhhasyhari/SOFT-COMPUTING-COLLEGE-S1-2025-PUBLIC-KOMPUTASI-LUNAK.git
+cd SOFT-COMPUTING-COLLEGE-S1-2025-PUBLIC-KOMPUTASI-LUNAK.git
+'''
+
+---
 
 ''' bash
 │
