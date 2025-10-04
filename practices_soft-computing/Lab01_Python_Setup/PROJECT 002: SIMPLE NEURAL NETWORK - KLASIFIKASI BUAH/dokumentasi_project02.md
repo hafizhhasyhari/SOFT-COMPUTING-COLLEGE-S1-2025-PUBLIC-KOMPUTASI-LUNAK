@@ -46,7 +46,7 @@ Perceptron adalah neural network paling sederhana yang dibuat oleh Frank Rosenbl
 error = y_true - y_predicted
 w_new = w_old + learning_rate * error * x
 b_new = b_old + learning_rate * error
-
+```
 
 #### 3.3 Hyperparameters
 
@@ -55,10 +55,10 @@ Iterations: 1000 (jumlah epoch)
 
 ## 4. HASIL
 #### 4.1 Accuracy
-
+```
 Training: ~95-100%
 Testing: ~90-95%
-
+```
 4.2 Kesimpulan
 ✅ Perceptron berhasil memisahkan 2 class (linearly separable)
 ✅ Model sederhana tapi efektif untuk masalah binary classification
@@ -68,7 +68,6 @@ Testing: ~90-95%
 ❌ Hanya binary classification (2 class)
 Solusi: Multi-layer Perceptron (akan dipelajari di Week 6-7)
 6. NEXT STEPS
-
- Coba dengan dataset real (UCI ML Repository)
- Implementasi multi-class classification
- Bandingkan dengan algoritma lain (SVM, Decision Tree)
+ - Coba dengan dataset real (UCI ML Repository)
+ - Implementasi multi-class classification
+ - Bandingkan dengan algoritma lain (SVM, Decision Tree)
