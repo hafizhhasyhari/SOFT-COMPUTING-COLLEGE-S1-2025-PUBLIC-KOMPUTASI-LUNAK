@@ -14,6 +14,7 @@ Membuat program yang menggunakan **Genetic Algorithm** untuk menebak kata rahasi
 ## 🛠️ Tools
 ```python
 pip install numpy matplotlib
+```
 
 ## 📁 Struktur Project
 project03_genetic_word/
@@ -49,20 +50,20 @@ Generasi 3: HELLO (sempurna!)
 ### 2.1 Fitness Function
 ```python
 fitness = jumlah karakter yang sama dengan target
-
+``` 
 Contoh:
 Target: HELLO
 Individu: HXLLO
 Fitness: 4/5 (H, L, L, O benar)
 
-2.2 Selection Method
+### 2.2 Selection Method
 Tournament Selection:
 
 Pilih 5 individu random
 Yang fitness tertinggi menang
 Ulangi untuk dapat 2 parent
 
-2.3 Crossover
+### 2.3 Crossover
 Single-Point Crossover:
 Parent1: HELLO
 Parent2: WORLD
@@ -71,39 +72,39 @@ Child: HEL + LD = HELLD
 
 ---
 
-2.4 Mutation
+### 2.4 Mutation
 Setiap karakter punya probabilitas mutation_rate untuk berubah random.
 Before: HELLO
 Mutate: H→X (position 0)
 After:  XELLO
 
-3. PARAMETER TUNING
-3.1 Population Size
+## 3. PARAMETER TUNING
+### 3.1 Population Size
 
 Kecil (50): Cepat tapi bisa stuck di local optimum
 Sedang (100-200): Balance
 Besar (500+): Lambat tapi lebih eksploratif
 
-3.2 Mutation Rate
+### 3.2 Mutation Rate
 
 Terlalu rendah (0.001): Konvergen lambat
 Ideal (0.01-0.05): Balance exploration vs exploitation
 Terlalu tinggi (0.5): Terlalu acak, tidak konvergen
 
-4. HASIL EKSPERIMEN
-4.1 Test "HELLO"
+## 4. HASIL EKSPERIMEN
+### 4.1 Test "HELLO"
 
 Population: 100
 Mutation Rate: 0.01
 Hasil: Solved dalam ~50-100 generasi
 
-4.2 Test "SOFT COMPUTING"
+### 4.2 Test "SOFT COMPUTING"
 
 Population: 200
 Mutation Rate: 0.01
 Hasil: Solved dalam ~200-400 generasi
 
-4.3 Observasi
+### 4.3 Observasi
 ✅ Kata lebih panjang = butuh lebih banyak generasi
 ✅ Elitism membantu mempertahankan solusi terbaik
 ✅ Mutation penting untuk avoid stuck
@@ -117,11 +118,12 @@ GA digunakan untuk:
 📊 Feature selection (machine learning)
 🏗️ Engineering design (struktur optimal)
 
-6. LIMITASI
+## 6. LIMITASI
 ❌ Tidak garantisolusi optimal (heuristic)
 ❌ Perlu tuning parameter
 ❌ Bisa lambat untuk masalah sangat kompleks
-7. NEXT STEPS
+
+## 7. NEXT STEPS
 
  Implementasi untuk TSP (Traveling Salesman)
  Multi-objective optimization
