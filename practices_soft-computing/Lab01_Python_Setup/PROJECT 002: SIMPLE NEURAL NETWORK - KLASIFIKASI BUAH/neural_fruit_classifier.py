@@ -211,3 +211,122 @@ def visualize_data(df):
         axes[2].scatter(data['Diameter (cm)'], data['Warna (RGB)'], 
                        c=colors[class_label], label=data['Nama'].iloc[0],
                        alpha=0.6, s=100)
+    axes[2].set_xlabel('Diameter (cm)', fontsize=12)
+    axes[2].set_ylabel('Warna (RGB Red)', fontsize=12)
+    axes[2].set_title('Distribusi: Diameter vs Warna', fontsize=13, fontweight='bold')
+    axes[2].legend()
+    axes[2].grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig('results/data_distribution.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    print("✅ Visualisasi data berhasil disimpan!")
+
+
+def plot_training_progress(errors):
+    """Plot progress training"""
+    plt.figure(figsize=(10, 6))
+    plt.plot(errors, linewidth=2, color='#e74c3c')
+    plt.xlabel('Iterasi', fontsize=12)
+    plt.ylabel('Jumlah Error', fontsize=12)
+    plt.title('Training Progress: Error vs Iterasi', fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3)
+    plt.savefig('results/training_progress.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    print("✅ Training progress berhasil disimpan!")
+
+
+def main():
+    """Fungsi utama"""
+    
+    print("=" * 70)
+    print("🍎 KLASIFIKASI BUAH MENGGUNAKAN NEURAL NETWORK (PERCEPTRON)")
+    print("=" * 70)
+    print()
+    
+    # 1. Generate dataset
+    print("📊 Step 1: Generate Dataset")
+    X, y, df = generate_fruit_dataset()
+    print(f"   ✅ Dataset berhasil dibuat: {len(X)} sampel")
+    print(f"   ✅ Features: Berat, Diameter, Warna")
+    print(f"   ✅ Classes: Jeruk (0) vs Apel (1)\n")
+    
+    # 2. Visualisasi data
+    print("📈 Step 2: Visualisasi Data")
+    visualize_data(df)
+    print()
+    
+    # 3. Split data
+    print("✂️ Step 3: Split Data (80% train, 20% test)")
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+    print(f"   ✅ Training set: {len(X_train)} sampel")
+    print(f"   ✅ Test set: {len(X_test)} sampel\n")
+    
+    # 4. Normalisasi data
+    print("🔧 Step 4: Normalisasi Data (Standardization)")
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+    print("   ✅ Data berhasil dinormalisasi\n")
+    
+    # 5. Training model
+    print("🧠 Step 5: Training Perceptron")
+    print("-" * 70)
+    model = SimplePerceptron(learning_rate=0.01, n_iterations=1000)
+    model.fit(X_train_scaled, y_train)
+    print("-" * 70)
+    print()
+    
+    # 6. Evaluasi
+    print("📊 Step 6: Evaluasi Model")
+    train_acc = model.evaluate(X_train_scaled, y_train)
+    test_acc = model.evaluate(X_test_scaled, y_test)
+    
+    print(f"   Training Accuracy: {train_acc:.2f}%")
+    print(f"   Test Accuracy: {test_acc:.2f}%")
+    
+    if test_acc >= 90:
+        print("   ✅ Model sangat baik!")
+    elif test_acc >= 80:
+        print("   ⚠️ Model cukup baik, bisa ditingkatkan")
+    else:
+        print("   ❌ Model perlu perbaikan")
+    print()
+    
+    # 7. Plot training progress
+    print("📈 Step 7: Visualisasi Training Progress")
+    plot_training_progress(model.errors)
+    print()
+    
+    # 8. Test prediksi manual
+    print("🔮 Step 8: Test Prediksi Manual")
+    print("-" * 70)
+    
+    test_samples = [
+        {'nama': 'Buah 1', 'berat': 145, 'diameter': 6.8, 'warna': 250},
+        {'nama': 'Buah 2', 'berat': 185, 'diameter': 8.2, 'warna': 210},
+        {'nama': 'Buah 3', 'berat': 160, 'diameter': 7.5, 'warna': 240},
+    ]
+    
+    print(f"{'Nama':<12} {'Berat':<10} {'Diameter':<12} {'Warna':<10} {'Prediksi':<15}")
+    print("-" * 70)
+    
+    for sample in test_samples:
+        X_sample = np.array([[sample['berat'], sample['diameter'], sample['warna']]])
+        X_sample_scaled = scaler.transform(X_sample)
+        prediction = model.predict(X_sample_scaled)[0]
+        pred_name = 'Apel (1)' if prediction == 1 else 'Jeruk (0)'
+        
+        print(f"{sample['nama']:<12} {sample['berat']:<10} {sample['diameter']:<12} "
+              f"{sample['warna']:<10} {pred_name:<15}")
+    
+    print("-" * 70)
+    print("\n✅ Project 02 selesai!")
+    print("=" * 70)
+
+
+if __name__ == "__main__":
+    main()
