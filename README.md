@@ -49,7 +49,7 @@ Learn about fuzzy sets, membership functions, fuzzy operations, and inference sy
 - Fuzzy Inference Systems (Mamdani & Sugeno)
 - Real-world Applications
 
-**[📂 View Theory →](📘_theory/) | [⚙️ View Labs →](⚙️_practices/lab02_fuzzy_logic/)**
+**[📂 View Theory →](materi-teori-soft-computing) | [⚙️ View Labs →](⚙️_practices/lab02_fuzzy_logic/)**
 
 ---
 
